@@ -24,7 +24,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-28 h-28 object-contain" />
+          <img src={logo} alt="logo" className="w-20 h-20 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Юрий&nbsp;
             <span className="sm:block hidden">| Frontend-разработчик</span>
@@ -40,7 +40,9 @@ const Navbar = () => {
                 } hover:text-white text-[18px] font-medium cursor-pointer`}
                 onClick={() => setActive(link.title)}
               >
-                <a href={`#${link.id}`}>{link.title}</a>
+                <a className="whitespace-nowrap" href={`#${link.id}`}>
+                  {link.title}
+                </a>
               </li>
             );
           })}
