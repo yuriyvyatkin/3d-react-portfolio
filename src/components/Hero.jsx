@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
   return (
@@ -18,12 +20,36 @@ const Hero = () => {
             Привет, я <span className="text-[#915eff]">Юрий</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Я разрабатываю пользовательские интерфейсы <br className="md:block hidden" />и веб-приложения
+            Я разрабатываю пользовательские интерфейсы{' '}
+            <br className="md:block hidden" />и веб-приложения
           </p>
         </div>
       </div>
 
       <ComputersCanvas />
+
+      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+        <a href="#about">
+          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+            <motion.dev
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+              className="mb-1"
+            >
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="text-secondary"
+              />
+            </motion.dev>
+          </div>
+        </a>
+      </div>
     </section>
   );
 };
