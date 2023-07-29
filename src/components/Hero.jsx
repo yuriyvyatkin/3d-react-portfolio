@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
@@ -5,6 +6,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
+  const [isPortableDevice, setIsPortableDevice] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 500px), (max-height: 597px)");
+
+    setIsPortableDevice(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsPortableDevice(event.matches);
+    }
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    }
+  }, [])
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -16,24 +35,24 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+          <h1 className={`${styles.heroHeadText} text-white ${isPortableDevice ? 'text-[45px]' : 'text-[70px]'}`}>
             Привет, я <span className="text-[#915eff]">Юрий</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-white-100 ${isPortableDevice ? 'text-[25px]' : 'text-[30px]'}`}>
             Я разрабатываю пользовательские интерфейсы{' '}
             <br className="md:block hidden" />и веб-приложения
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
+      <ComputersCanvas isPortableDevice={isPortableDevice} />
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className='absolute xs:bottom-5 bottom-32 w-full flex justify-center items-center'>
         <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+          <div className={`${isPortableDevice ? 'w-[30px] h-[54px]' : 'w-[35px] h-[64px]'} rounded-3xl border-4 border-secondary flex justify-center items-start p-2`}>
             <motion.dev
               animate={{
-                y: [0, 24, 0],
+                y: isPortableDevice ? [-12, 14, -12] : [-10, 22, -10],
               }}
               transition={{
                 duration: 1.5,
