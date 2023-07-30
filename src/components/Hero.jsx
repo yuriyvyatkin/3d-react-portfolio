@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white ${isPortableDevice ? 'text-[45px]' : 'text-[70px]'}`}>
+          <h1 className={`${styles.heroHeadText} text-white ${isPortableDevice ? 'text-[40px]' : 'text-[65px]'}`}>
             Привет, я <span className="text-[#915eff]">Юрий</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100 ${isPortableDevice ? 'text-[25px]' : 'text-[30px]'}`}>
