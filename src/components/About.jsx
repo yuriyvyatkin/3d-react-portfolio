@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
+import { SectionWrapper } from '../hoc';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -45,16 +46,16 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        В веб-разработке 2.5 года. Есть коммерческий опыт работы в Agile/Scrum-командах до 10 человек. Завершил более 30 курсов и 100 пет-проектов на GitHub. Имею высшее образование по разработке программного обеспечения. Владею английским на уровне B1. Текущий стек: TypeScript, React, Redux Toolkit, SCSS, HTML, Webpack.
+        В веб-разработке 2.5 года. Есть коммерческий опыт работы в Agile/Scrum-командах до 10 человек. Завершил более 30 курсов и более 100 проектов на GitHub. Имею высшее образование по разработке программного обеспечения. Владею английским на уровне B1. Текущий стек: TypeScript, React, Redux Toolkit, SCSS, HTML, Webpack.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-5 flex flex-wrap gap-10">
         {services.map((service, index) => (<ServiceCard key={service.title} index={index} {...service} />))}
       </div>
     </>
   )
 }
 
-export default About
+export default SectionWrapper(About, "about");
