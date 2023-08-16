@@ -8,16 +8,30 @@ import {
   css,
   reactjs,
   redux,
-  tailwind,
-  nodejs,
-  mongodb,
   git,
   figma,
-  docker,
+  jest,
+  handlebars,
+  appveyor,
+  bootstrap,
+  eslint,
+  githublogo,
+  laravel,
+  nodejs,
+  npm,
+  photoshop,
+  php,
+  sass,
+  sql,
+  travis,
+  trello,
+  vscode,
+  webpack,
+  yarn,
+  mui,
   carrent,
   jobit,
   tripguide,
-  threejs,
   terra,
 } from "../assets";
 
@@ -61,6 +75,10 @@ const technologies = [
     icon: css,
   },
   {
+    name: "SASS",
+    icon: sass,
+  },
+  {
     name: "JavaScript",
     icon: javascript,
   },
@@ -73,24 +91,12 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
+    name: "Redux",
     icon: redux,
   },
   {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
+    name: "webpack",
+    icon: webpack,
   },
   {
     name: "git",
@@ -101,8 +107,20 @@ const technologies = [
     icon: figma,
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "mui",
+    icon: mui,
+  },
+  {
+    name: "jest",
+    icon: jest,
+  },
+  {
+    name: "nodejs",
+    icon: nodejs,
+  },
+  {
+    name: "sql",
+    icon: sql,
   },
 ];
 
